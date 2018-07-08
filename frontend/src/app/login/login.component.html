@@ -1,0 +1,37 @@
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1 class="fadeIn fourth">LogIn Here</h1>
+    <div class="fadeIn first">
+      <img src="https://i.pinimg.com/736x/e6/82/09/e682092806f42f01f23d82034f2dd671--stuff-to-buy.jpg" id="icon" alt="User Icon" />
+    </div>
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)]="email">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"[(ngModel)]="password">
+      <input type="submit" class="fadeIn fourth" value="Log In" (click)="verifyaccount()">
+    </form>    
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/signup">Don't Have Account? Create One Now!!</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal" *ngIf="display"  style="display: block ; ">
+    <div class="modal-dialog modal-dialog-centered" >
+      <div class="modal-content gradient">
+        <div class="modal-header">
+          <h5 class="modal-title" >Information for you</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onclose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{mymessage}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onclose()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

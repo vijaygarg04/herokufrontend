@@ -1,0 +1,50 @@
+<app-navbar [parentData]='email'></app-navbar>
+<div style="width: 80%; margin:0 auto; min-width: 200px; margin-top: 50px" class="animate">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light " style="border-radius:10px ">
+<ul class="navbar-nav mr-auto" >
+<li class="nav-item dropdown" >
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-divider"></div>
+      <button (click)="sortbypricelowtohigh()" class="dropdown-item" ><i class="fas fa-rupee-sign"></i>   Price <i class="fas fa-angle-double-up"></i></button>
+      <button (click)="sortbypricehightolow()" class="dropdown-item" ><i class="fas fa-rupee-sign"></i>  Price <i class="fas fa-angle-double-down"></i></button>
+      <div class="dropdown-divider"></div>
+      <button (click)="sortbyconditiongoodtobad()" class="dropdown-item" >Condition <i class="fas fa-grin-tears"></i></button>
+      <button (click)="sortbyconditionbadtogood()" class="dropdown-item" >Condition <i class="fas fa-sad-tear"></i></button>
+    </div>
+  </li>
+</ul>
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Enter book/author" aria-label="Search" [(ngModel)]="srch" name="srch">
+    <button class="btn btn-ou tline-success my-2 my-sm-0 btn-info" type="submit" (click)="searchbook()">Search</button>
+  </form>
+</nav>
+</div>
+<section>
+    <div class="container">
+      
+      <div  class="card pos"  style="margin: 20px auto;border-radius: 5px;width: 80%;" *ngFor="let listing of listings;even as e;odd as o;index as i" [class.odd]="o" 
+      [class.even]="e" >
+        <div class="row" >
+          <div class="col-md-7">
+            <div class="card-block" style="margin: 10px">
+              <h1 class="card-title" style="margin-top: 15px">{{listing.book}}</h1>
+              <h3 class="card-text" style="margin-top: 15px">{{listing.author}}</h3>
+              <h5 class="card-text" style="margin-top: 15px">{{listing.description}}</h5>
+              <h2 class="card-text" style="margin-top: 15px"><i class="fas fa-rupee-sign"></i> {{listing.price}} ( {{conditions[i]}} )</h2>
+              <h5 class="card-text" style="margin-top: 15px">{{listing.condition}}</h5>
+              <a (click)="onSelect(listing)" class="btn btn-primary" style="margin-top: 10px;margin-left:5px; width: 180px"><i class="fas fa-info "></i> Get More Details !!!!</a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card-img-bottom">
+              <img [src]="listing.image" style="width: 100%; height: 100%;margin: auto auto"/>          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  <app-footer></app-footer>

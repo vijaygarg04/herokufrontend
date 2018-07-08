@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div class="container" style="background-color: #E9F4FB; padding: 40px; margin: 20px auto;border-radius:15px ">
+
+    <h1 class="my-4">{{listitem.book}}
+      <small>({{listitem.author}})</small>
+    </h1>
+
+    <div class="row">
+
+      <div class="col-md-8">
+        <img class="img-fluid" [src]="listitem.image" alt="">
+      </div>
+
+      <div class="col-md-4">
+        <h6 class="my-3">{{listitem.description}}</h6>
+        <h4 class="my-4">{{sellerinfo.name}}</h4>
+        <h5><i class="fas fa-mobile-alt fa-spin"></i>   ({{sellerinfo.phonenumber}})</h5>
+        <h2 class="my-3"><i class="fas fa-rupee-sign"></i> {{listitem.price}} ({{condition}})</h2>
+        
+        <button class="btn btn-primary btn-sm" style="margin: 5px" (click)="addtowishlist()" ><i class="fas fa-heart fa-spin" ></i>  Add To WishList</button>
+        <button class="btn btn-primary  btn-sm" style="margin: 5px" (click)="chat()"><i class="fas fa-comment " ></i>  Chat With Seller</button>
+      </div>
+      
+    </div>
+  </div>
+  <div>
+  <div id="myModal" class="modal"  *ngIf="show">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" (click)="cancel()">&times;</span>
+      <h3>Enter Your Message Here</h3>
+      <textarea rows="2" cols="20" [(ngModel)]="msgtosend">
+        </textarea>
+        <div *ngIf="displayreport"  style="display: block ; ">
+            <h5>{{submsg}}</h5>
+        </div>
+        <div style="margin-top: 10px;margin-bottom: 10px">
+
+        <button  class="btn btn-danger btn-md close" (click)="cancel()" style="height:50px ;width: 20%;margin-left: 15%;margin-right: 15%; float: left">Cancel <i class="fas fa-ban"></i></button>
+        <button class="btn btn-success close" (click)="sendmsg()" style="height:50px ;width: 20%;margin-left: 15%;margin-right: 15%; float: left">Send <i class="fas fa-step-forward"></i></button>
+        </div>
+    </div>
+  
+  </div>
+  <div class="modal" *ngIf="display"  style="display: block ; ">
+      <div class="modal-dialog modal-dialog-centered" >
+        <div class="modal-content gradient">
+          <div class="modal-header">
+            <h5 class="modal-title" >Information for you</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onclose()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            {{mymessage}}
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onclose()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <app-footer></app-footer>

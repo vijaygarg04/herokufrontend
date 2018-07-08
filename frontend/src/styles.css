@@ -1,0 +1,28 @@
+body{
+    
+    background-image: url("http://www.freepptbackgrounds.net/wp-content/uploads/2017/06/Flying-Student-Background-800x600.jpg");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: 100% 100%;
+    min-height: 100%;
+
+
+    /* https://images2.alphacoders.com/261/thumb-1920-26102.jpg */
+    /* https://images6.alphacoders.com/346/346199.jpg */
+/* http://littlereasonstosmile.me/wp-content/uploads/book-border-free-download-clip-art-on-clipart-wallpaper.jpg */
+/* https://previews.123rf.com/images/chrisdorney/chrisdorney1210/chrisdorney121000119/16033075-abstract-shot-of-a-pile-of-books-over-a-white-background-.jpg */
+/* http://www.watoceans.org/fileup/big/25/256363_books-background-wallpaper.jpg */
+}
+.gradient {
+
+    /* can be treated like a fallback */
+    background-color: #09203f;
+  
+    /* will be "on top", if browser supports it */
+    background-image: linear-gradient(#09203f, #537895);
+  
+    /* these will reset other properties, like background-position, but it does know what you mean */
+    background: #09203f;
+    background: linear-gradient(#09203f, #537895);
+  
+  }

@@ -1,0 +1,42 @@
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1 class="fadeIn fourth">SignUp Here</h1>
+    <form>
+     <i class="fas fa-user fa-2x"></i><input type="text" [(ngModel)]="name" id="name" class="fadeIn second" name="name" placeholder="Name" >
+     <p></p>
+     <i class="fas fa-envelope fa-2x"></i><input type="email" [(ngModel)]="email" id="emailaddress" class="fadeIn third" name="email" placeholder="Email Address" required >
+     <p></p>
+     <i class="fas fa-building fa-2x"></i><input type="text" id="college" [(ngModel)]="college" class="fadeIn second" name="college" placeholder="College" required >
+     <p></p>
+     <i class="fas fa-map-marker-alt fa-2x"></i><input type="text" id="address" [(ngModel)]="address" class="fadeIn third" name="address" placeholder="Address" required >
+     <p></p>
+     <i class="fas fa-phone fa-rotate-180 fa-2x"></i><input type="number" id="phonenumber" [(ngModel)]="phonenumber" class="fadeIn second" name="phonenumber" placeholder="Phone Number" required >
+     <p></p>
+     <i class="fas fa-key fa-2x"></i><input type="password" id="password" class="fadeIn third" name="password" [(ngModel)]="password" placeholder="Password" required >
+     <input type="submit" class="fadeIn fourth"  (click)="signup()" value="SignUp" >
+    </form>    
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/login">Already Have Account? LogIn Here !!!</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="display"  style="display: block ; ">
+    <div class="modal-dialog modal-dialog-centered" >
+      <div class="modal-content gradient">
+        <div class="modal-header">
+          <h5 class="modal-title" >Information for you</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onclose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{mymessage}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onclose()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

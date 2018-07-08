@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <h1 class="fadeIn fourth">Add New Item in List Here</h1>
+      <form>
+       <i class="fas fa-book-open fa-2x"></i><input type="text" [(ngModel)]="book" id="book" class="fadeIn second" name="book" placeholder="book Name" >
+       <p></p>
+       <i class="fas fa-edit fa-2x"></i><input type="text" [(ngModel)]="author" id="author" class="fadeIn third" name="author" placeholder="Author Name" required >
+       <p></p>
+       <i class="fas fa-file-image fa-2x"></i><input type="text" id="imgurl" [(ngModel)]="imgurl" class="fadeIn second" name="imgurl" placeholder="Image URL Here" required >
+       <p></p>
+       <i class="fas fa-rupee-sign fa-2x"></i><input type="number" id="price" [(ngModel)]="price" class="fadeIn third" name="price" placeholder=" Item Price" required >
+       <p></p>
+       <select [(ngModel)]="conditionselect" name="selct" style="width: 400px;">
+          <option *ngFor="let condition of conditions" [ngValue]="condition">{{condition}}</option>
+        </select>
+        <p></p>
+       <input type="submit" class="fadeIn fourth"  (click)="submititem()" value="Submit Item" >
+      </form>    
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/viewlist">View My All List Items</a>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div class="modal" *ngIf="display"  style="display: block ; ">
+    <div class="modal-dialog modal-dialog-centered" >
+      <div class="modal-content gradient">
+        <div class="modal-header">
+          <h5 class="modal-title" >Information for you</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onclose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{mymessage}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onclose()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

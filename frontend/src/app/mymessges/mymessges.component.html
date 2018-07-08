@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<div style="width: 80%; margin:0 auto; min-width: 200px; margin-top: 50px" class="animate">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " style="border-radius:10px ">
+  <ul class="navbar-nav mr-auto" >
+  <li class="nav-item dropdown" >
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-divider"></div>
+        <button (click)="getsentby()" class="dropdown-item" > Sent</button>
+        <button (click)="getreceivedby()" class="dropdown-item" >Received</button>
+        </div>
+    </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="sender email id to search for" aria-label="Search" [(ngModel)]="srch" name="srch">
+      <button class="btn btn-ou tline-success my-2 my-sm-0 btn-info" type="submit" (click)="searchbyusermsg()">Search</button>
+    </form>
+  </nav>
+  </div>
+<div  class="container" style="display: block;margin-top: 30px; background-color: oldlace; border-radius: 12px; padding: 5px 10px" *ngFor="let msg of msgs;" >
+  <div style="background-color: lightgreen; margin-top: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px">
+    <h3 style="margin: 5px 50px">{{msg.fromorto}}  {{msg.text}} </h3>
+      <div class="modal-content" style="display: block;margin-top: 5px;background-color: white; margin-bottom: 10px">          
+        <h4 style="margin: 50px 30px">{{msg.message}}</h4>     
+      <button  class="btn btn-success " (click)="reply(msg)" style="width: 10%;margin: 1% 50%">Reply <i class="fas fa-reply"></i></button>    
+      </div>
+  </div>
+<div id="myModal" class="modal"  *ngIf="show" style="display: block ; ">
+<div class="modal-content">
+    <span class="close" (click)="cancel()">&times;</span>
+    <h3>Enter Your Message Here</h3>
+    <textarea rows="2" cols="20" [(ngModel)]="msgtosend">
+      </textarea>
+      <div *ngIf="displayreport"  style="display: block ; ">
+          <h5>{{submsg}}</h5>
+      </div>
+      <div style="margin-top: 10px; margin-bottom: 10px">
+
+      <button  class="btn btn-danger btn-md close" (click)="cancel()" style="height:50px ;width: 20%;margin-left: 15%;margin-right: 15%; float: left">Cancel <i class="fas fa-ban"></i></button>
+      <button class="btn btn-success close" (click)="sendmsg()" style="height:50px ;width: 20%;margin-left: 15%;margin-right: 15%; float: left">Send <i class="fas fa-step-forward"></i></button>
+      </div>
+  </div>
+  </div>
+  </div>
+<app-footer></app-footer>

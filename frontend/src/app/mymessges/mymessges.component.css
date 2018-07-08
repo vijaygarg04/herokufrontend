@@ -1,0 +1,285 @@
+.card-img-bottom {
+    color: #fff;
+    margin-top: 5px;
+    width: 95%;
+    height: 95%;
+  }
+  .odd{
+    /* for chrome and safari*/
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: slideout;
+  
+    /*for firefox*/
+    -moz-animation-duration: 1s;
+    -moz-animation-name: slideout;
+  
+      /* for opera*/
+    -o-animation-duration: 1s;
+    -o-animation-name: slideout;
+  
+      /* Standard syntax*/
+    animation-duration: 1s;
+    animation-name: slideout;
+  }
+  
+  @-webkit-keyframes slideout {
+    from {
+        margin-left: -100%;
+        width: 300%;
+    }
+  
+    to {
+        margin-left: 0%;
+        width: 80%;
+    }
+  }
+  
+  @-moz-keyframes slideout {
+    from {
+        margin-left: -100%;
+        width: 300%;
+    }
+  
+    to {
+        margin-left: 0%;
+        width: 80%;
+    }
+  }
+  @-o-keyframes slideout {
+    from {
+        margin-left: -100%;
+        width: 300%;
+    }
+  
+    to {
+        margin-left: 0%;
+        width: 80%;
+    }
+  }
+  @keyframes slideout {
+    from {
+        margin-left: -100%;
+        width: 300%;
+    }
+  
+    to {
+        margin-right: 0%;
+        width: 80%;
+    }
+  }
+
+  .even{
+    /* for chrome and safari*/
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: slidein;
+
+    /*for firefox*/
+    -moz-animation-duration: 1s;
+    -moz-animation-name: slidein;
+
+      /* for opera*/
+    -o-animation-duration: 1s;
+    -o-animation-name: slidein;
+
+      /* Standard syntax*/
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@-webkit-keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 80%;
+    }
+}
+
+@-moz-keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 80%;
+    }
+}
+ @-o-keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 80%;
+    }
+}
+  @keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 80%;
+    }
+}
+.animate{
+    -webkit-animation: NAME-YOUR-ANIMATION 3s;
+    -moz-animation: NAME-YOUR-ANIMATION 3s;
+    -o-animation: NAME-YOUR-ANIMATION 3s;
+    animation: NAME-YOUR-ANIMATION 3s;
+    opacity: 1;
+}
+@keyframes NAME-YOUR-ANIMATION {
+    0% {
+        opacity: 0;
+    }
+    12%{
+        opacity: 0.12;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    37%{
+        opacity: 0.37;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    62%{
+        opacity: 0.62;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    87%{
+        opacity: 0.87;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+    0% {
+        opacity: 0;
+    }
+    12%{
+        opacity: 0.12;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    37%{
+        opacity: 0.37;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    62%{
+        opacity: 0.62;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    87%{
+        opacity: 0.87;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes NAME-YOUR-ANIMATION {
+    0% {
+        opacity: 0;
+    }
+    12%{
+        opacity: 0.12;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    37%{
+        opacity: 0.37;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    62%{
+        opacity: 0.62;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    87%{
+        opacity: 0.87;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes NAME-YOUR-ANIMATION {
+    0% {
+        opacity: 0;
+    }
+    12%{
+        opacity: 0.12;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    37%{
+        opacity: 0.37;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    62%{
+        opacity: 0.62;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    87%{
+        opacity: 0.87;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes NAME-YOUR-ANIMATION {
+    0% {
+        opacity: 0;
+    }
+    12%{
+        opacity: 0.12;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    37%{
+        opacity: 0.37;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    62%{
+        opacity: 0.62;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    87%{
+        opacity: 0.87;
+    }
+    100% {
+        opacity: 1;
+    }
+}
